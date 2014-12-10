@@ -1,0 +1,40 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @admin_clinic.name %></h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <b>Logo:</b>
+      <%= image_tag @admin_clinic.clinic_logo.url(:thumb) %>
+    </p>
+
+    <p>
+      <b>City:</b>
+      <%= @admin_clinic.city %>
+    </p>
+
+    <p>
+      <b>Contact num:</b>
+      <%= @admin_clinic.contact_num %>
+    </p>
+
+    <p>
+      <b>Address:</b>
+      <%= @admin_clinic.address %>
+    </p>
+
+    <p>
+      <b>Email:</b>
+      <%= @admin_clinic.email %>
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+<%= link_to 'Edit', edit_admin_clinic_path(@admin_clinic) %> |
+<%= link_to 'Back', admin_clinics_path %>

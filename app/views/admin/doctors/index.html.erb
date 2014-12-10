@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Doctors</b></h3>
+  </div>
+  <div class="panel-body">
+    Here you can see all the doctors currently present in database. You can add edit delete the doctors information.
+  </div>
+</div>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>About you</th>
+        <th>Education</th>
+        <th>Profile pic</th>
+        
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_doctors.each do |admin_doctor| %>
+      <tr>
+        <td><%= admin_doctor.id %></td>
+        <td><%= admin_doctor.name %></td>
+        <td><%= admin_doctor.about_you %></td>
+        <td><%= admin_doctor.education %></td>
+        <td><%= image_tag admin_doctor.profile_pic.url(:thumb) %></td>
+        <td><%= link_to 'Show', admin_doctor, :class => "btn btn-default btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_admin_doctor_path(admin_doctor), :class => "btn btn-primary btn-sm" %></td>
+        <td><%= link_to 'Destroy', admin_doctor, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %></td>
+      </tr>
+    <% end %>
+
+   
+  </tbody>
+</table>
+
+
+
+
+
+<br />
+
+<%= link_to 'New Doctor', new_admin_doctor_path, :class => "btn btn-success" %>
+
+
+

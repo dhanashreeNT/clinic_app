@@ -1,0 +1,68 @@
+<%= form_for @admin_doctor, :html =>{:class => "form-horizontal", :multipart => true} do |f| %>
+
+  <% if @admin_doctor.errors.any? %>
+    <div class="panel panel-danger" id="error_explanation">
+      <div class="panel-heading">
+         <h3 class="panel-title"><%= pluralize(@admin_doctor.errors.count, "error") %> prohibited this admin_doctor from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @admin_doctor.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  
+
+  <fieldset>
+    <legend>Doctor Information</legend>
+    <%= f.hidden_field :admin_clinic_id, :value => Admin::Clinic.first.id %>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Name</label>
+      <div class="col-lg-10">
+        <%= f.text_field :name, :class => "form-control", :placeholder => "Enter name"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Profile Picture</label>
+      <div class="col-lg-10">
+        <%= f.file_field :profile_pic, :class => "form-control", :placeholder => "logo"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Education</label>
+      <div class="col-lg-10">
+        <%= f.text_field :education, :class => "form-control", :placeholder => "Education"%>
+      </div>
+    </div>
+
+    
+
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">About You</label>
+      <div class="col-lg-10">
+        <%= f.text_area :about_you, :class =>"form-control" %>
+        
+        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+      </div>
+    </div>
+
+
+    
+    
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <%= link_to "Cancel", admin_doctors_path, :class => "btn btn-default" %>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
+  </fieldset>
+<% end %>
+

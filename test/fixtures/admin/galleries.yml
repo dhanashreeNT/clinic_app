@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  admin_clinic: 
+  galleryimage: 
+  description: MyString
+
+two:
+  admin_clinic: 
+  galleryimage: 
+  description: MyString

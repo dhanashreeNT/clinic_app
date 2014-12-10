@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Gallery Image</b></h3>
+  </div>
+  <div class="panel-body">
+    Here you can see all the gallery images currently present in database. You can add edit delete the gallery image information.
+  </div>
+</div>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+        <th>#</th>
+        <th>Gallery image</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_galleries.each do |admin_gallery| %>
+      <tr>
+        <td><%= admin_gallery.id %></td>
+        <td><%= image_tag admin_gallery.galleryimage.url(:thumb) %></td>
+        <td><%= admin_gallery.description %></td>
+        
+        <td><%= link_to 'Show', admin_gallery, :class => "btn btn-default btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_admin_gallery_path(admin_gallery), :class => "btn btn-primary btn-sm" %></td>
+        <td><%= link_to 'Destroy', admin_gallery, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %></td>
+      </tr>
+    <% end %>
+
+   
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Gallery image', new_admin_gallery_path, :class => "btn btn-success" %>
+
+
+

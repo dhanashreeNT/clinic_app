@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @admin_doctor.name %></h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <b>Profile Picture:</b>
+      <%= image_tag @admin_doctor.profile_pic.url(:thumb) %>
+    </p>
+
+    <p>
+      <b>Education:</b>
+      <%= @admin_doctor.education %>
+    </p>
+
+    <p>
+      <b>About You:</b>
+     <%= @admin_doctor.about_you %>
+    </p>
+
+    
+  </div>
+</div>
+
+
+
+
+
+<%= link_to 'Edit', edit_admin_doctor_path(@admin_doctor) %> |
+<%= link_to 'Back', admin_doctors_path %>

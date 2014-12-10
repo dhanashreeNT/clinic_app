@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Pages</b></h3>
+  </div>
+  <div class="panel-body">
+    Here you can see all the Pages currently present in database. You can edit name, disable and enable the pages.
+  </div>
+</div>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+        <th>#</th>
+        <th>Page Name</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+        
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_pages.each do |admin_page| %>
+      <tr>
+        <td><%= admin_page.id %></td>
+        
+        <td><%= admin_page.name %></td>
+        <td><%= admin_page.status %></td>
+        <td><%= link_to 'Show', admin_page, :class => "btn btn-default btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_admin_page_path(admin_page), :class => "btn btn-primary btn-sm" %></td>
+        
+      </tr>
+    <% end %>
+
+   
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Gallery image', new_admin_page_path, :class => "btn btn-success" %>
+
+
+
