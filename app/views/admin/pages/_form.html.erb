@@ -18,13 +18,11 @@
   <fieldset>
     <legend>Pages</legend>
     <%= f.hidden_field :admin_clinic_id, :value => Admin::Clinic.first.id %>
-    
-
    
     <div class="form-group">
       <label for="inputPassword" class="col-lg-2 control-label">Name</label>
       <div class="col-lg-10">
-        <%= f.text_field :name, :class => "form-control", :placeholder => "Name"%>
+        <label class = "form-control"><%= @admin_page.name %></label>
       </div>
     </div>
 

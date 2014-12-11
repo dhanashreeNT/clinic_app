@@ -1,4 +1,19 @@
 ClinicApp::Application.routes.draw do
+  namespace :admin do
+    resources :appointments
+  end
+
+
+  namespace :admin do
+    resources :timeofappointments
+  end
+
+
+  namespace :admin do
+    resources :services
+  end
+
+
   get "staticpages/home"
 
   get "staticpages/about"
@@ -30,7 +45,7 @@ ClinicApp::Application.routes.draw do
     resources :clinics
   end
 
-
+  
   match 'admin/dashboards' => 'admin/dashboards#index', :as => :dashboards_index
 
   devise_for :admins

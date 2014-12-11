@@ -19,7 +19,7 @@
         <th>Email</th>
         <th></th>
         <th></th>
-        <th></th>
+        
     </tr>
   </thead>
   <tbody>
@@ -34,7 +34,7 @@
         <td><%= admin_clinic.email %></td>
         <td><%= link_to 'Show', admin_clinic, :class => "btn btn-default btn-sm" %></td>
         <td><%= link_to 'Edit', edit_admin_clinic_path(admin_clinic), :class => "btn btn-primary btn-sm" %></td>
-        <td><%= link_to 'Destroy', admin_clinic, method: :delete, data: { confirm: 'Are you sure?' } , :class => "btn btn-danger btn-sm"%></td>
+       
     </tr>
     <% end %>
   </tbody>
@@ -46,4 +46,4 @@
 
 <br />
 
-<%= link_to 'New Clinic', new_admin_clinic_path, :class => "btn btn-success" %>
+

@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Time of Appointmnets</b></h3>
+  </div>
+  <div class="panel-body">
+    Here you can see all the time of appointments currently present in database. You can add edit delete the time of appointments.
+  </div>
+</div>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+        <th>#</th>
+        <th>Time</th>
+        
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_timeofappointments.each do |admin_timeofappointment| %>
+      <tr>
+        <td><%= admin_timeofappointment.id %></td>
+       
+        <td><%= admin_timeofappointment.toa %></td>
+        
+        <td><%= link_to 'Show', admin_timeofappointment, :class => "btn btn-default btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_admin_timeofappointment_path(admin_timeofappointment), :class => "btn btn-primary btn-sm" %></td>
+        <td><%= link_to 'Destroy', admin_timeofappointment, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %></td>
+      </tr>
+    <% end %>
+
+   
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Time', new_admin_timeofappointment_path, :class => "btn btn-success" %>
+

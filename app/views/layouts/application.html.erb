@@ -4,7 +4,7 @@
   <title>ClinicApp</title>
   <% @current_url = request.url() %>
   <% if @current_url.include? "admin" %>
-  	<%= stylesheet_link_tag  "admin/bootstrap.min.css", "admin/bootstrap.css" %>
+  	<%= stylesheet_link_tag  "admin/bootstrap.min.css", "admin/bootstrap.css", "admin/bootstrap-datetimepicker.min.css" %>
   <% else %>
   	<%= stylesheet_link_tag  "public/bootstrap.min.css", "public/bootstrap.css", "public/font-awesome.min.css" %>
   <% end %>
@@ -13,9 +13,7 @@
 </head>
 <body id="home">
 <% if @current_url.include? "admin" %>
-	<% if current_admin %>
-		<%= render "layouts/admin_header" %>
-	<% end %>
+	<%= render "layouts/admin_header" %>
 	<%= render "layouts/admin_layout" %>
 <% else %>
 	<%= render "layouts/public_layout" %>
@@ -23,8 +21,8 @@
 
 </body>
 </html>
-<script>
-    $('.carousel').carousel({
-        interval: 3000
-    })
+<script type="text/javascript">
+  $(function() {
+    $('#datetimepicker1').datetimepicker();
+  });
 </script>

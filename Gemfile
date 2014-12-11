@@ -9,6 +9,9 @@ gem 'sqlite3'
 gem 'devise'
 gem 'annotate', '~> 2.6.5'
 gem "paperclip", "~> 4.2"
+gem "cancan"
+gem 'momentjs-rails'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

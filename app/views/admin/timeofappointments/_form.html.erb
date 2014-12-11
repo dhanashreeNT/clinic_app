@@ -1,0 +1,42 @@
+<%= form_for @admin_timeofappointment, :html =>{:class => "form-horizontal", :multipart => true} do |f| %>
+
+  <% if @admin_timeofappointment.errors.any? %>
+    <div class="panel panel-danger" id="error_explanation">
+      <div class="panel-heading">
+         <h3 class="panel-title"><%= pluralize(@admin_timeofappointment.errors.count, "error") %> prohibited this admin_timeofappointment from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @admin_timeofappointment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  
+
+  <fieldset>
+    <legend>Appointment Time</legend>
+    <%= f.hidden_field :admin_clinic_id, :value => Admin::Clinic.first.id %>
+    
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Time of Appointmnet</label>
+      <div class="col-lg-10">
+        <%= f.text_field :toa, :class => "form-control", :placeholder => "Time"%>
+      </div>
+    </div>
+
+   
+
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <%= link_to "Cancel", admin_timeofappointments_path, :class => "btn btn-default" %>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
+  </fieldset>
+<% end %>

@@ -1,0 +1,97 @@
+<%= form_for @admin_appointment, :html =>{:class => "form-horizontal"} do |f| %>
+
+  <% if @admin_appointment.errors.any? %>
+    <div class="panel panel-danger" id="error_explanation">
+      <div class="panel-heading">
+         <h3 class="panel-title"><%= pluralize(@admin_appointment.errors.count, "error") %> prohibited this admin_appointment from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @admin_appointment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  
+
+  <fieldset>
+    <legend>Appointment Details</legend>
+    <%= f.hidden_field :admin_clinic_id, :value => Admin::Clinic.first.id %>
+    
+
+
+ 
+
+
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">First Name</label>
+      <div class="col-lg-10">
+        <%= f.text_field :first_name, :class => "form-control", :placeholder => "First Name"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Last Name</label>
+      <div class="col-lg-10">
+        <%= f.text_field :last_name, :class => "form-control", :placeholder => "Last Name"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Select Service</label>
+      <div class="col-lg-10">
+        <%= f.select(:admin_service_id, Admin::Service.find(:all).collect{|u| [u.name,u.id]},:prompt => 'Select Service', :class => "form-control") %>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Select Date And Time of Appointment</label>
+         <div class="col-lg-10">
+            <div class='input-group date' id='datetimepicker1'>
+                <%= f.text_field :appdatetime, :class => "form-control" %>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+         </div>
+    </div> 
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Address</label>
+      <div class="col-lg-10">
+        <%= f.text_area :address, :class => "form-control", :placeholder => "Address"%>
+      </div>
+    </div>
+   
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <%= f.email_field :email, :class => "form-control", :placeholder => "Email"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Contact Number</label>
+      <div class="col-lg-10">
+        <%= f.text_field :contact_num, :class => "form-control", :placeholder => "Contact Number"%>
+      </div>
+    </div>
+
+    
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <%= link_to "Cancel", admin_appointments_path, :class => "btn btn-default" %>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+
+  </fieldset>
+<% end %>
+
+
+
+

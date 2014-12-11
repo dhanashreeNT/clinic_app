@@ -12,4 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require moment
 //= require_tree .
+
+$( document ).ready(function() {
+    console.log( "ready!" );
+    //$('#admin_timeofappointment_toa').timepicker();
+});

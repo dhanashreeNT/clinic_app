@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  admin_clinic: 
+  admin_service: 
+  admin_timeofappointment: 
+  first_name: MyString
+  last_name: MyString
+  address: MyText
+  email: MyString
+  conatact_num: MyString
+
+two:
+  admin_clinic: 
+  admin_service: 
+  admin_timeofappointment: 
+  first_name: MyString
+  last_name: MyString
+  address: MyText
+  email: MyString
+  conatact_num: MyString

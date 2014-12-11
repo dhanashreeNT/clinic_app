@@ -13,6 +13,7 @@ class Admin::PagesController < ApplicationController
   end
 
   def new
+    authorize! :create, Admin::Page
     @admin_page = Admin::Page.new
     respond_with(@admin_page)
   end

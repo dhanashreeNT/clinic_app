@@ -13,6 +13,7 @@ class Admin::ClinicsController < ApplicationController
   end
 
   def new
+    authorize! :create, Admin::Clinic
     @admin_clinic = Admin::Clinic.new
     respond_with(@admin_clinic)
   end
@@ -43,7 +44,7 @@ class Admin::ClinicsController < ApplicationController
 
   def destroy
     
-   
+     authorize! :destroy, Admin::Clinic
     @admin_clinic.clinic_logo = nil
     respond_to do |format|
     if @admin_clinic.destroy

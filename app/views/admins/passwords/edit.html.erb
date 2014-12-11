@@ -1,22 +1,35 @@
-<h2>Change your password</h2>
+<div class="col-lg-3"></div>
+<div class="well bs-component col-lg-6">
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post,:class => "form-horizontal" }) do |f| %>
+      <%= devise_error_messages! %>
+      <%= f.hidden_field :reset_password_token %>
+      <fieldset>
+        <legend>Forgot your password?</legend>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+         <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">New Password</label>
+            <div class="col-lg-10">
+              <%= f.password_field :password, :class => "form-control", :placeholder => "Enter password"%>
+            </div>
+         </div>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Confirm new password</label>
+            <div class="col-lg-10">
+              <%= f.password_field :password_confirmation, :class => "form-control", :placeholder => "Renter password"%>
+            </div>
+         </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+         <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+              
+              <button type="submit" class="btn btn-primary">Change my password</button>
+            </div>
+          </div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+      </fieldset>
 
-<%= render "admins/shared/links" %>
+  <% end %>
+</div>
+<div class="col-lg-3"></div>
+

@@ -1,0 +1,2 @@
+module Admin::TimeofappointmentsHelper
+end

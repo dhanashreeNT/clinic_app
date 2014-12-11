@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @admin_appointment.first_name %> <%= @admin_appointment.last_name %></h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <b>Date and time of appointment:</b>
+      <%= @admin_appointment.appdatetime %>
+    </p>
+    <p>
+      <b>Service:</b>
+      <%= Admin::Service.find(@admin_appointment.admin_service_id).name %>
+    </p>
+    <p>
+      <b>Address:</b>
+      <%= @admin_appointment.address %>
+    </p>
+
+    <p>
+      <b>Email:</b>
+      <%= @admin_appointment.email %>
+    </p>
+
+    <p>
+      <b>Conatact num:</b>
+      <%= @admin_appointment.contact_num %>
+    </p>
+  </div>
+</div>
+
+
+
+
+<%= link_to 'Edit', edit_admin_appointment_path(@admin_appointment) %> |
+<%= link_to 'Back', admin_appointments_path %>

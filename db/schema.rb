@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141209111726) do
+ActiveRecord::Schema.define(:version => 20141211090657) do
+
+  create_table "admin_appointments", :force => true do |t|
+    t.integer  "admin_clinic_id"
+    t.integer  "admin_service_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "address"
+    t.string   "email"
+    t.string   "contact_num"
+    t.datetime "appdatetime"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "admin_appointments", ["admin_clinic_id"], :name => "index_admin_appointments_on_admin_clinic_id"
+  add_index "admin_appointments", ["admin_service_id"], :name => "index_admin_appointments_on_admin_service_id"
 
   create_table "admin_clinics", :force => true do |t|
     t.string   "name"
@@ -65,6 +81,29 @@ ActiveRecord::Schema.define(:version => 20141209111726) do
   end
 
   add_index "admin_pages", ["admin_clinic_id"], :name => "index_admin_pages_on_admin_clinic_id"
+
+  create_table "admin_services", :force => true do |t|
+    t.integer  "admin_clinic_id"
+    t.string   "name"
+    t.text     "description"
+    t.string   "servimage_file_name"
+    t.string   "servimage_content_type"
+    t.integer  "servimage_file_size"
+    t.datetime "servimage_updated_at"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  add_index "admin_services", ["admin_clinic_id"], :name => "index_admin_services_on_admin_clinic_id"
+
+  create_table "admin_timeofappointments", :force => true do |t|
+    t.integer  "admin_clinic_id"
+    t.string   "toa"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "admin_timeofappointments", ["admin_clinic_id"], :name => "index_admin_timeofappointments_on_admin_clinic_id"
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
