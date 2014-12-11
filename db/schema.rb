@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20141211090657) do
     t.text     "address"
     t.string   "email"
     t.string   "contact_num"
-    t.datetime "appdatetime"
+    t.string   "appdatetime"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end

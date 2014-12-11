@@ -9,7 +9,7 @@ class CreateAdminAppointments < ActiveRecord::Migration
       t.text :address
       t.string :email
       t.string :contact_num
-      t.datetime :appdatetime
+      t.string :appdatetime
       t.timestamps
     end
     add_index :admin_appointments, :admin_clinic_id

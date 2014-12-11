@@ -23,6 +23,7 @@ class Admin::AppointmentsController < ApplicationController
   def create
     @admin_appointment = Admin::Appointment.new(params[:admin_appointment])
     @admin_appointment.save
+    AppointmentMailer.created_appointment_email(@admin_appointment).deliver
     respond_with(@admin_appointment)
   end
 

@@ -10,7 +10,7 @@
 #  address          :text
 #  email            :string(255)
 #  contact_num      :string(255)
-#  appdatetime      :datetime
+#  appdatetime      :string(255)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
