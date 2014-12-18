@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141211090657) do
+ActiveRecord::Schema.define(:version => 20141218115441) do
 
   create_table "admin_appointments", :force => true do |t|
     t.integer  "admin_clinic_id"
@@ -104,6 +104,15 @@ ActiveRecord::Schema.define(:version => 20141211090657) do
   end
 
   add_index "admin_timeofappointments", ["admin_clinic_id"], :name => "index_admin_timeofappointments_on_admin_clinic_id"
+
+  create_table "admin_workhours", :force => true do |t|
+    t.string   "day"
+    t.string   "start_time"
+    t.string   "end_time"
+    t.boolean  "weekly_off", :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

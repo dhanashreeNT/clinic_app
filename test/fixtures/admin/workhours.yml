@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  day: MyString
+  start_time: MyString
+  end_time: MyString
+  weekly_off: false
+
+two:
+  day: MyString
+  start_time: MyString
+  end_time: MyString
+  weekly_off: false

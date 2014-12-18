@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><b>Pages</b></h3>
+  </div>
+  <div class="panel-body">
+    Here you can see all the working days with timings currently present in database. You can edit timings, make the day as weekly off.
+  </div>
+</div>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+        <th>#</th>
+        <th>Day</th>
+        <th>Start time</th>
+        <th>End time</th>
+        <th>Weekly off</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_workhours.each do |admin_workhour| %>
+      <tr>
+        <td><%= admin_workhour.id %></td>
+        <td><%= admin_workhour.day %></td>
+        <td><%= admin_workhour.start_time %></td>
+        <td><%= admin_workhour.end_time %></td>
+        <td><% if admin_workhour.weekly_off? %> Yes <% else %> No <% end %></td>
+        <td><%= link_to 'Show', admin_workhour, :class => "btn btn-default btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_admin_workhour_path(admin_workhour), :class => "btn btn-primary btn-sm" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+

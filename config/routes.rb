@@ -1,5 +1,10 @@
 ClinicApp::Application.routes.draw do
   namespace :admin do
+    resources :workhours
+  end
+
+
+  namespace :admin do
     resources :appointments
   end
 
