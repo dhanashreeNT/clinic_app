@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(:version => 20141218115441) do
     t.string   "email"
     t.string   "contact_num"
     t.string   "appdatetime"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string   "status",           :default => "pending"
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
   end
 
   add_index "admin_appointments", ["admin_clinic_id"], :name => "index_admin_appointments_on_admin_clinic_id"

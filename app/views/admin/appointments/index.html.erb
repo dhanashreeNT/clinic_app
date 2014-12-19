@@ -13,14 +13,12 @@
         <th>#</th>
         <th>Service</th>
         <th>Time of appointment</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Address</th>
+        <th>Name</th>
         <th>Email</th>
-        <th>Conatact Number</th>
+        <th>Contact Number</th>
+        <th>Status</th>
         <th></th>
-        <th></th>
-        <th></th>
+        
     </tr>
   </thead>
   <tbody>
@@ -29,15 +27,29 @@
         <td><%= admin_appointment.id %></td>
         <td><%= Admin::Service.find(admin_appointment.admin_service_id).name %></td>
         <td><%= admin_appointment.appdatetime %></td>
-        <td><%= admin_appointment.first_name %></td>
-        <td><%= admin_appointment.last_name %></td>
-        <td><%= admin_appointment.address %></td>
+        <td><%= admin_appointment.first_name %> <%= admin_appointment.last_name %></td>
         <td><%= admin_appointment.email %></td>
         <td><%= admin_appointment.contact_num %></td>
-        
-        <td><%= link_to 'Show', admin_appointment, :class => "btn btn-default btn-sm" %></td>
-        <td><%= link_to 'Edit', edit_admin_appointment_path(admin_appointment), :class => "btn btn-primary btn-sm" %></td>
-        <td><%= link_to 'Destroy', admin_appointment, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %></td>
+        <td><% if admin_appointment.pending? %>Pending
+            <% elsif admin_appointment.approved? %>Approved
+            <% else %>Faked<% end %></td>
+       
+        <td>
+            <div class="btn-group btn-sm">
+              <a href="#" class="btn btn-default btn-sm">Action</a>
+              <a href="#" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown"><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Show', admin_appointment %></li>
+                <li><%= link_to 'Edit', edit_admin_appointment_path(admin_appointment) %></li>
+                <li><%= link_to 'Destroy', admin_appointment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+        </td>
       </tr>
     <% end %>
 

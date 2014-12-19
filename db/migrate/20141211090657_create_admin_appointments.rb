@@ -10,6 +10,7 @@ class CreateAdminAppointments < ActiveRecord::Migration
       t.string :email
       t.string :contact_num
       t.string :appdatetime
+      t.string :status, :default => "pending"
       t.timestamps
     end
     add_index :admin_appointments, :admin_clinic_id
