@@ -5,13 +5,19 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 gem 'devise'
 gem 'annotate', '~> 2.6.5'
 gem "paperclip", "~> 4.2"
 gem "cancan"
 gem 'momentjs-rails'
 
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

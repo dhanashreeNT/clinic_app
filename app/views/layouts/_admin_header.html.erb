@@ -1,3 +1,22 @@
+<% if params[:controller] == "admin/dashboards" 
+  @navselected = "Dashboards"
+elsif params[:controller] == "admin/clinics" 
+  @navselected = "Clinics"
+elsif params[:controller] == "admin/doctors" 
+  @navselected = "Doctors"
+elsif params[:controller] == "admin/galleries" 
+  @navselected = "Galleries"
+elsif params[:controller] == "admin/pages" 
+  @navselected = "Pages"
+elsif params[:controller] == "admin/appointments" 
+  @navselected = "Appointments"
+elsif params[:controller] == "admin/workhours" 
+  @navselected = "Workhours"
+end
+
+%>
+
+
 <div class="navbar navbar-default">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -11,14 +30,14 @@
   <% if current_admin %>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Dashboards",dashboards_index_path %></li>
-        <li><%= link_to "Clinic",admin_clinics_path %></li>
-        <li><%= link_to "Doctors",admin_doctors_path %></li>
-        <li><%= link_to "Images in Gallery",admin_galleries_path %></li>
-        <li><%= link_to "Pages",admin_pages_path %></li>
-        <li><%= link_to "Services",admin_services_path %></li>
-        <li><%= link_to "Appointments",admin_appointments_path %></li>
-        <li><%= link_to "Working Hours",admin_workhours_path %></li>
+        <li class="<%= @navselected == 'Dashboards' ? 'active' : '' %>"><%= link_to "Dashboards",dashboards_index_path %></li>
+        <li class="<%= @navselected == 'Clinics' ? 'active' : '' %>"><%= link_to "Clinic",admin_clinics_path %></li>
+        <li class="<%= @navselected == 'Doctors' ? 'active' : '' %>"><%= link_to "Doctors",admin_doctors_path %></li>
+        <li class="<%= @navselected == 'Galleries' ? 'active' : '' %>"><%= link_to "Images in Gallery",admin_galleries_path %></li>
+        <li class="<%= @navselected == 'Pages' ? 'active' : '' %>"><%= link_to "Pages",admin_pages_path %></li>
+        <li class="<%= @navselected == 'Dashboards' ? 'active' : '' %>"><%= link_to "Services",admin_services_path %></li>
+        <li class="<%= @navselected == 'Appointments' ? 'active' : '' %>"><%= link_to "Appointments",admin_appointments_path %></li>
+        <li class="<%= @navselected == 'Workhours' ? 'active' : '' %>"><%= link_to "Working Hours",admin_workhours_path %></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">

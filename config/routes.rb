@@ -19,17 +19,7 @@ ClinicApp::Application.routes.draw do
   end
 
 
-  get "staticpages/home"
-
-  get "staticpages/about"
-
-  get "staticpages/gallery"
-
-  get "staticpages/services"
-
-  get "staticpages/appintment"
-
-  get "staticpages/contact_us"
+  
 
   namespace :admin do
     resources :pages
@@ -55,6 +45,15 @@ ClinicApp::Application.routes.draw do
 
   devise_for :admins
 
+ 
+
+  match "/admin/appointments/change_status/:id" => "admin/appointments#change_status",    :method=>:post,   :as => :admin_appointment_change_status
+  match "/home" => "public/staticpages#home", :as =>"home"
+  match "/about" => "public/staticpages#about", :as =>"about"
+  match "/gallery" => "public/staticpages#gallery", :as =>"gallery"
+  match "/services" => "public/staticpages#services", :as =>"services"
+  match "/appintment" => "public/staticpages#appintment", :as =>"appintment"
+  match "/contact_us" => "public/staticpages#contact_us", :as =>"contact_us"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -28,7 +28,7 @@ class Admin::Clinic < ActiveRecord::Base
   def create_pages
      self.admin_pages.create(:name => "Home",:status => true)
      self.admin_pages.create(:name => "About",:status => true)
-     self.admin_pages.create(:name => "Galery",:status => true)
+     self.admin_pages.create(:name => "Gallery",:status => true)
      self.admin_pages.create(:name => "Services",:status => true)
      self.admin_pages.create(:name => "Appointment",:status => true)
      self.admin_pages.create(:name => "Contact Us",:status => true)

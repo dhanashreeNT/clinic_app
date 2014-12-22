@@ -20,6 +20,16 @@ class Admin::AppointmentsController < ApplicationController
   def edit
   end
 
+  def change_status
+    @status = params[:status] || 'pending'
+    @appointment = Admin::Appointment.find_by_id(params[:id])
+    @appointment.set_status(@status)
+    respond_to do |format|
+      format.html {}
+      format.js {render :change_status}
+    end
+  end
+
   def create
     @admin_appointment = Admin::Appointment.new(params[:admin_appointment])
     @admin_appointment.save

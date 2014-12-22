@@ -20,7 +20,7 @@ class Admin::Appointment < ActiveRecord::Base
   belongs_to :admin_clinic
   belongs_to :admin_service
   
-  attr_accessible :address, :contact_num, :email, :first_name, :last_name, :appdatetime, :admin_service_id, :admin_clinic_id
+  attr_accessible :address, :contact_num, :email, :first_name, :last_name, :appdatetime, :admin_service_id, :admin_clinic_id, :status
 
   def approved?
   	self.status == "approved"
@@ -32,5 +32,9 @@ class Admin::Appointment < ActiveRecord::Base
 
   def pending?
   	self.status == "pending"
+  end
+
+  def set_status(status)
+    self.update_attributes(:status => status)
   end
 end

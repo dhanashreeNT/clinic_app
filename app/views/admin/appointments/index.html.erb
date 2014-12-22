@@ -30,23 +30,26 @@
         <td><%= admin_appointment.first_name %> <%= admin_appointment.last_name %></td>
         <td><%= admin_appointment.email %></td>
         <td><%= admin_appointment.contact_num %></td>
-        <td><% if admin_appointment.pending? %>Pending
-            <% elsif admin_appointment.approved? %>Approved
-            <% else %>Faked<% end %></td>
+        <td><b><%= admin_appointment.status.capitalize %></b></td>
        
         <td>
             <div class="btn-group btn-sm">
-              <a href="#" class="btn btn-default btn-sm">Action</a>
-              <a href="#" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown"><span class="caret"></span></a>
+              <a href="#" class="btn btn-primary btn-sm">Action</a>
+              <a href="#" class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown"><span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to 'Show', admin_appointment %></li>
                 <li><%= link_to 'Edit', edit_admin_appointment_path(admin_appointment) %></li>
                 <li><%= link_to 'Destroy', admin_appointment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <% if admin_appointment.pending? %>
+                  <li><%= link_to "Approve", admin_appointment_change_status_path(:id => admin_appointment.id, :status => "approved"), :remote=>true %></li>
+                  <li><%= link_to "Fake", admin_appointment_change_status_path(:id => admin_appointment.id, :status =>"faked"), :remote=>true %></li>
+                <% elsif admin_appointment.approved? %>
+                  <li><%= link_to "Pending", admin_appointment_change_status_path(:id => admin_appointment.id, :status => "pending"), :remote=>true %></li>
+                  <li><%= link_to "Fake", admin_appointment_change_status_path(:id => admin_appointment.id, :status => "faked"), :remote=>true %></li>
+                <% elsif admin_appointment.faked? %>
+                  <li><%= link_to "Approve", admin_appointment_change_status_path(:id => admin_appointment.id, :status =>"approved"), :remote=>true %></li>
+                  <li><%= link_to "Pending", admin_appointment_change_status_path(:id => admin_appointment.id, :status =>"pending"), :remote=>true %></li>
+                <% end %>
               </ul>
             </div>
         </td>
