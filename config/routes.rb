@@ -8,18 +8,13 @@ ClinicApp::Application.routes.draw do
     resources :appointments
   end
 
-
   namespace :admin do
     resources :timeofappointments
   end
 
-
   namespace :admin do
     resources :services
   end
-
-
-  
 
   namespace :admin do
     resources :pages
@@ -45,15 +40,16 @@ ClinicApp::Application.routes.draw do
 
   devise_for :admins
 
- 
-
   match "/admin/appointments/change_status/:id" => "admin/appointments#change_status",    :method=>:post,   :as => :admin_appointment_change_status
   match "/home" => "public/staticpages#home", :as =>"home"
   match "/about" => "public/staticpages#about", :as =>"about"
   match "/gallery" => "public/staticpages#gallery", :as =>"gallery"
   match "/services" => "public/staticpages#services", :as =>"services"
-  match "/appintment" => "public/staticpages#appintment", :as =>"appintment"
+  match "/book_appointment" => "public/staticpages#book_appointment", :as =>"book_appointment"
   match "/contact_us" => "public/staticpages#contact_us", :as =>"contact_us"
+  match "/service/:id" => "public/staticpages#service", :as => "service"
+  match "/admin/change_password/change" =>   "admin/change_password#change", :method=>:post,  :as => :admin_change_password
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

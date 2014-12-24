@@ -1,56 +1,68 @@
-<div class="navbar navbar-default navbar-fixed-top">
-      
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><%= image_tag @clinic.clinic_logo.url(:thumb) %><%= @clinic.name %></a>
+<% if params[:action] == "home" 
+      @navselected = "home"
+    elsif params[:action] == "about" 
+      @navselected = "about"
+    elsif params[:action] == "gallery" 
+      @navselected = "gallery"
+    elsif params[:action] == "services" 
+      @navselected = "services"
+    elsif params[:action] == "book_appointment" 
+      @navselected = "book_appointment"
+    elsif params[:action] == "contact_us" 
+      @navselected = "contact_us"
+    end
+%>
+
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><%= @clinic.name %></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <% if @is_home %>
+                        <li class="<%= @navselected == 'home' ? 'active' : '' %>">
+                            <a href="<%= home_path %>">Home</a>
+                        </li>
+                    <% end %>
+                    <% if @is_about %>
+                         <li class="<%= @navselected == 'about' ? 'active' : '' %>">
+                            <a href="<%= about_path %>">About Us</a>
+                        </li>
+                    <% end %>
+                    <% if @is_gallery %>
+                         <li class="<%= @navselected == 'gallery' ? 'active' : '' %>">
+                            <a href="<%= gallery_path %>">Gallery</a>
+                        </li>
+                    <% end %>
+                    <% if @is_services %>
+                         <li class="<%= @navselected == 'services' ? 'active' : '' %>">
+                            <a href="<%= services_path %>">Services</a>
+                        </li>
+                    <% end %>
+                    <% if @is_appointment %>
+                         <li class="<%= @navselected == 'book_appointment' ? 'active' : '' %>">
+                            <a href="<%= book_appointment_path %>">Book Appointment</a>
+                        </li>
+                    <% end %>
+                    <% if @is_contact_us %>
+                        <li class="<%= @navselected == 'contact_us' ? 'active' : '' %>">
+                            <a href="<%= contact_us_path %>">Contact Us</a>
+                        </li>
+                    <% end %>
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-
-
-        
-        <div class="navbar-collapse collapse" id="navbar-main">
-          <ul class="nav navbar-nav">
-            <% if @is_home %>
-              <li>
-                <a href="<%= home_path %>">Home</a>
-              </li>
-            <% end %>
-            <% if @is_about %>
-              <li>
-                <a href="<%= about_path %>">About Us</a>
-              </li>
-            <% end %>
-            <% if @is_gallery %>
-              <li>
-                <a href="<%= gallery_path %>">Gallery</a>
-              </li>
-            <% end %>
-            <% if @is_services %>
-              <li>
-                <a href="<%= services_path %>">Services</a>
-              </li>
-            <% end %>
-            <% if @is_appointment %>
-              <li>
-                <a href="<%= appintment_path %>">Book Appointment</a>
-              </li>
-            <% end %>
-            <% if @is_contact_us %>
-              <li>
-                <a href="<%= contact_us_path %>">Contact Us</a>
-              </li>
-            <% end %>
-
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li>
-            <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a></li>
-          </ul>
-
-        </div>
-
-    </div>
+        <!-- /.container -->
+    </nav>

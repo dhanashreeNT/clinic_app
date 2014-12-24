@@ -1,2 +1,35 @@
-<h1>Public::Staticpages#about</h1>
-<p>Find me in app/views/public/staticpages/about.html.erb</p>
+<!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="col-lg-10">
+                    <h2 class="page-header">About Us</h2>
+                    <p>Pradhan Dental Centre is the only certified dental clinic in India that carries all three certifications. All the above certifications ensure quality dentistry, comfort and a pain free dental experience.</p>
+                    <p>Our spacious clinic located in Juhu Mumbai, right in the heart of Bollywood caters to a large spectrum of well heeled individuals, from corporate honchos to movie stars, expatriates to locals and also to medical / dental tourists. All our patients have one thing in common they come seeking us because we have a high level of commitment, empathy and expertise to offer. Above all a pain free dental experience!</p>
+                    <p>Our corporate social responsibility has allowed us to contribute to society at large. We have worked with NGOs like Mobile Creshes, Aseema, and currently we work with Chip. For more information on Chip visit:  Chipmumbai. Dentistry with a human heart is what makes us tick!</p>
+                    <p>We also train dentists in the tribal areas of the northeast for the government of Nagaland, and help them upgrade and modernize their services.</p>
+                    <p>Our ever efficient and warm team, of doctors and staff work hard to make your experience an enjoyable one. Come and enjoy our friendly staff, soothing inside outside ambience and above all the compassion, expertise and advanced dental  facilities of Pradhan Dental Centre.</p>
+                    <h2 class="page-header">Our Team</h2>
+                    <% @team_members.each do |team| %>
+	                    <div class="row">
+	                        <div class="col-lg-5 col-md-4 col-xs-6 thumb">
+	                            <a class="thumbnail" href="#">
+	                            	
+	                                <img class="img-responsive" src="<%= team.profile_pic.url(:thumb) %>" alt="" style="width:253px;height:189px">
+	                            </a>
+	                        </div>
+	                        <div class="col-lg-5 col-md-4 col-xs-6 thumb">
+	                                <%= team.about_you %>
+	                        </div>
+	                    </div>
+                    <% end %>
+                    
+                </div>
+            </div>
+            <div class="col-sm-2">
+               <%= render "public/staticpages/right_sidebar" %>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+</div>
