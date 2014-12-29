@@ -5,6 +5,8 @@ booapp1.jpg: booapp1-f7f248f6fb4d54619ea21d68f8fa5c16.jpg
 booapp1/index.jpg: booapp1-f7f248f6fb4d54619ea21d68f8fa5c16.jpg
 bookapp.jpg: bookapp-0b6bf47439734c67113d4a21ba53cd40.jpg
 bookapp/index.jpg: bookapp-0b6bf47439734c67113d4a21ba53cd40.jpg
+firstwall.jpeg: firstwall-870641b38bdc510f26f1f6a8483a5518.jpeg
+firstwall/index.jpeg: firstwall-870641b38bdc510f26f1f6a8483a5518.jpeg
 flash.jpg: flash-7d660a2ce63e262a3798b2fb5739c327.jpg
 flash/index.jpg: flash-7d660a2ce63e262a3798b2fb5739c327.jpg
 images (1).jpg: images (1)-8c8545f6c59a929c2fc4e160a94b9ed2.jpg
@@ -83,12 +85,14 @@ admin/timeofappointments.css: admin/timeofappointments-875f0d42a52ff5536404da8fd
 admin/timeofappointments/index.css: admin/timeofappointments-875f0d42a52ff5536404da8fda8d423b.css
 admin/workhours.css: admin/workhours-875f0d42a52ff5536404da8fda8d423b.css
 admin/workhours/index.css: admin/workhours-875f0d42a52ff5536404da8fda8d423b.css
-application.css: application-58e3b8bc5884f3b468cd856fbba8334f.css
-application/index.css: application-58e3b8bc5884f3b468cd856fbba8334f.css
-public/bootstrap.css: public/bootstrap-dfaf13cc22c19c2e17c14aed7f795e52.css
-public/bootstrap/index.css: public/bootstrap-dfaf13cc22c19c2e17c14aed7f795e52.css
+application.css: application-6ba8cdd274e5b05a9c30a65c2a20cec7.css
+application/index.css: application-6ba8cdd274e5b05a9c30a65c2a20cec7.css
+public/bootstrap.css: public/bootstrap-d76c06bf6ff0b6416ff9695a8aac9d4a.css
+public/bootstrap/index.css: public/bootstrap-d76c06bf6ff0b6416ff9695a8aac9d4a.css
 public/bootstrap.min.css: public/bootstrap.min-987d12b8b5eedb2700b575c8337822fd.css
 public/bootstrap/index.min.css: public/bootstrap.min-987d12b8b5eedb2700b575c8337822fd.css
+public/business-frontpage.css: public/business-frontpage-838f594c38d057c1a81248f41b4fa642.css
+public/business-frontpage/index.css: public/business-frontpage-838f594c38d057c1a81248f41b4fa642.css
 public/font-awesome.min.css: public/font-awesome.min-223f9e7eb34604862702e61a234f4f88.css
 public/font-awesome/index.min.css: public/font-awesome.min-223f9e7eb34604862702e61a234f4f88.css
 public/staticpages.css: public/staticpages-875f0d42a52ff5536404da8fda8d423b.css
