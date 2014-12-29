@@ -1,0 +1,13 @@
+
+ <h2 class="page-header">Contact Us</h2>
+                <address>
+                    <strong><%= @clinic.name %></strong>
+                    <br><br>
+                    <%= @clinic.address %>
+                    <br>
+                </address>
+                <address>
+                    <abbr title="Phone">P:&nbsp;</abbr><%= @clinic.contact_num %>
+                    <br>
+                    <abbr title="Email">E:&nbsp;</abbr><a href="mailto:<%= @clinic.email %>"><%= @clinic.email %></a>
+                </address>
