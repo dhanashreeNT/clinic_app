@@ -12,11 +12,13 @@
     <div class="container">
      <div class="row">
             <div class="col-sm-10">
-                <h2 class="page-header">What We Do</h2>
-                <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
+                <h2 class="page-header">Welcome to <%= @clinic.name %></h2>
+                <p><%= @clinic.name %> orthodontic & dental implant center is conveniently located on contour road, Gokulam, Mysore - A historical, yoga centered & life style hub.
+                </p>
+                <p>We provide comprehensive dental care & follow stringent autoclaving & sterilization procedures. We assist to restore your most valuable asset -- - your smile.</p>
+                <p>Explore the quality, excellence & comfortable individualized treatment care at our practice After exploring the various treatment modalities at our online dental practice, please feel free to call us and schedule a consultation to further discuss your dental concerns & needs with our doctors.</p>
                 <p>
-                    <a class="btn btn-info btn-lg" href="<%= book_appointment_path %>"><i>Book An Appointment &raquo;</i></a>
+                    <a class="btn btn-success" href="<%= book_appointment_path %>"><i>Book An Appointment &raquo;</i></a>
                 </p>
             </div>
             <div class="col-sm-2">
